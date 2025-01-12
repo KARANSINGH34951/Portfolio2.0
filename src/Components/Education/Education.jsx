@@ -41,16 +41,40 @@ const Education = () => {
         </div>
     
         <div className="flex-3 w-full md:w-3/5 space-y-6">
-          {educationData.map((edu) => (
-            <EducationCard
-              key={edu.id}
-              institution={edu.institution}
-              course={edu.course}
-              startYear={edu.startYear}
-              endYear={edu.endYear}
-            />
-          ))}
-        </div>
+  {educationData.map((edu) => (
+    <EducationCard
+      key={edu.id}
+      institution={edu.institution}
+      course={edu.course}
+      startYear={edu.startYear}
+      endYear={edu.endYear}
+    />
+  ))}
+
+
+<div className="bg-black p-8 rounded-lg shadow-xl mt-8 space-y-6">
+
+  <h1 className="text-5xl  text-center font-extrabold text-yellow-400 mb-4 leading-tight">
+    Self-Taught Programmer
+    <br />
+    <span className="text-teal-500 text-3xl">Master of Code Magic</span>
+  </h1>
+
+  <p className="text-xl text-center font-semibold text-gray-300 mb-4 leading-relaxed">
+    Code isn’t just code... it’s a <span className="text-green-500">machine</span>.
+  </p>
+  <p className="text-lg text-center text-gray-300 mb-6 leading-relaxed">
+    From <span className="text-blue-500">React</span> to <span className="text-purple-400">Node.js</span>, I’m always building the next big thing.
+  </p>
+
+ 
+</div>
+
+</div>
+
+
+
+
   
       </div>
     </div>

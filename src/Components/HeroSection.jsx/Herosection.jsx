@@ -3,7 +3,7 @@ import img from "../../assets/imgkaran.jpg";
 import { useState, useEffect } from "react";
 
 const Herosection = () => {
-  const greetings = ["नमस्ते", "வணக்கம்", "Hello", "Hola", "How's it?"];
+  const greetings = ["नमस्ते 🙏", "வணக்கம் 🙏", "Hello 👋", "Hola 👋", "How's it? 🫵"];
   const [currentGreeting, setCurrentGreeting] = useState(greetings[0]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Herosection = () => {
       
         <div className="bg-green-500 w-2/5 p-8 flex flex-col justify-center shadow-lg">
           <h1 className="text-6xl font-extrabold text-yellow-400 mb-4">
-            {currentGreeting}, 🚀
+            {currentGreeting}, 
           </h1>
           <p className="text-white text-lg leading-relaxed">
             When it comes to coding, I’m like a magician who makes bugs
