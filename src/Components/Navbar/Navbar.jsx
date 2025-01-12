@@ -1,37 +1,36 @@
 import React from "react";
+import logo from "../../utils/logo.png"
 
 const Navbar = () => {
   return (
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-md w-full fixed top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <div className="text-white text-2xl font-bold">
-          <span className="cursor-pointer hover:scale-105 transform transition">
-            LOGO
-          </span>
-        </div>
-
-        <ul className="flex space-x-8 text-white text-lg">
-          <li className="hover:text-gray-300 cursor-pointer transition">
-            Home
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer transition">
-            About
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer transition">
-            My Projects
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer transition">
-            Contact Me
-          </li>
-        </ul>
-
-        <div>
-          <button className="bg-white text-indigo-500 font-semibold px-4 py-2 rounded-lg hover:bg-indigo-100 transition">
-            Hire Me?
-          </button>
-        </div>
+    <nav className="h-16 bg-black flex items-center px-6 shadow-lg ">
+      
+      <div className="flex items-center">
+        <img
+          src={logo}
+          alt="logo"
+          className="w-12 h-12 rounded-full mr-3"
+        />
+        <h1 className="text-white text-xl font-bold">DevWithKaran</h1>
       </div>
-    </div>
+
+
+      <ul className="flex-1 flex justify-center space-x-10 text-white text-lg">
+        <li className="hover:text-gray-300 cursor-pointer">Home</li>
+        <li className="hover:text-gray-300 cursor-pointer">About</li>
+        <li className="hover:text-gray-300 cursor-pointer">Projects</li>
+        <li className="hover:text-gray-300 cursor-pointer">Services</li>
+        <li className="hover:text-gray-300 cursor-pointer">Resume</li>
+        <li className="hover:text-gray-300 cursor-pointer">Contact</li>
+      </ul>
+
+      
+      <div>
+        <button className="bg-white text-indigo-500 px-4 py-2 rounded-full shadow-md hover:bg-gray-200">
+          Hire Me
+        </button>
+      </div>
+    </nav>
   );
 };
 

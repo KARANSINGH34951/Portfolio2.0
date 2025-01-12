@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import './App.css'
-import Projects from './Components/Projects'
-import HeroSection from './Components/HeroSection.jsx/Herosection'
-import Navbar from './Components/Navbar/Navbar'
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import "./App.css";
+import HeroSection from './Components/HeroSection.jsx/Herosection';
+import AboutMe from './Components/Aboutme/AboutMe';
+import Education from './Components/Education/Education';
 
 function App() {
-
   return (
-    <>
-      <Navbar/>
-    </>
-  )
+   <div>
+      <Navbar />
+      <HeroSection/>
+      <AboutMe/>
+      <Education/>
+      
+   </div>
+  );
 }
 
-export default App
+export default App;

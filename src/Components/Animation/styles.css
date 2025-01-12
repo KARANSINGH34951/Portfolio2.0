@@ -1,0 +1,18 @@
+.parallax-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+.parallax-text {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  display: flex;
+  gap: 50px;
+  will-change: transform; 
+}
