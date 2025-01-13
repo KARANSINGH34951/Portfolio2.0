@@ -44,7 +44,7 @@ const ErrorPage = () => {
    
       <footer className="absolute bottom-4 text-gray-500 text-sm">
         <p>
-          Created with 🤓 &amp; 🚀 by <span className="font-bold">[Your Name]</span>
+          Created with 🤓 &amp; 🚀 by <span className="font-bold">Karan Singh</span>
         </p>
       </footer>
     </div>

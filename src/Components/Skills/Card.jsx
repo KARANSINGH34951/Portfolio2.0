@@ -17,10 +17,10 @@ function Card({ text, index, image }) {
       }}
       viewport={{ once: true }}
     >
-      {/* Image inside card */}
+      
       <img src={image} alt={text} className="w-16 h-16 mb-4 rounded-full object-cover" />
 
-      {/* Skill text */}
+   
       <p className="card-text text-xl text-white font-semibold">{text}</p>
     </motion.div>
   );

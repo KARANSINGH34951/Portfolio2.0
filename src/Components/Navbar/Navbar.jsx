@@ -6,8 +6,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white px-6 shadow-lg">
-      <div className="flex justify-between items-center h-16">
-        {/* Logo */}
+      <div className="flex justify-between items-center h-20">
+  
         <div className="flex items-center">
           <img
             src={logo}
@@ -26,7 +26,7 @@ const Navbar = () => {
           <li className="hover:text-gray-300 cursor-pointer">Contact</li>
         </ul>
 
-        {/* Hire Me Button */}
+       
         <div className="hidden md:block">
           <button className="bg-white text-indigo-500 px-4 py-2 rounded-full shadow-md hover:bg-gray-200 text-sm lg:text-base">
             Hire Me
