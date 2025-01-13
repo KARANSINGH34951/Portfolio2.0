@@ -2,7 +2,6 @@ import React from "react";
 import Card from "./Card";
 
 function Skills() {
-
   const skills = [
     { name: "JavaScript", image: "https://th.bing.com/th/id/OIP.1Se7tgAnRox2K9H5L77QOAHaEx?w=267&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" },
     { name: "React", image: "https://th.bing.com/th/id/OIP.IGAgoFLRQ54R3gtLiW5x2AHaE7?w=301&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" },
@@ -17,7 +16,8 @@ function Skills() {
   return (
     <div className="App bg-gray-900 p-12 flex flex-col items-center">
       <h2 className="text-3xl text-white mb-8 font-semibold">Skills</h2>
-      <div className="skills-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+      {/* Scrollable container */}
+      <div className="skills-container flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
         {skills.map((skill, i) => (
           <Card key={i} text={skill.name} index={i} image={skill.image} />
         ))}
@@ -25,4 +25,5 @@ function Skills() {
     </div>
   );
 }
+
 export default Skills;

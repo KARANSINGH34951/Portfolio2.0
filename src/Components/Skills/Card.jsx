@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-
 function Card({ text, index, image }) {
   return (
     <motion.div
