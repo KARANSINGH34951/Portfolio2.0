@@ -33,7 +33,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Hamburger Menu Icon */}
+       
         <div
           className="block md:hidden cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+     
       {menuOpen && (
         <div className="md:hidden flex flex-col space-y-4 bg-gray-800 text-white py-6 px-4 rounded-lg shadow-lg">
           <ul>
@@ -97,7 +97,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Close Button (Optional for better UX) */}
+          
           <button
             className="bg-red-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-red-600"
             onClick={() => setMenuOpen(false)}

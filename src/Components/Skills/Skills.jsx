@@ -15,9 +15,10 @@ function Skills() {
 
   return (
     <div className="App bg-gray-900 p-12 flex flex-col items-center">
-      <h2 className="text-3xl text-white mb-8 font-semibold">Skills</h2>
-      {/* Scrollable container */}
-      <div className="skills-container flex gap-6 overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
+      <h2 className="text-4xl text-white font-extrabold text-center mb-12 underline decoration-blue-500">
+        Skills
+      </h2>
+      <div className="skills-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
         {skills.map((skill, i) => (
           <Card key={i} text={skill.name} index={i} image={skill.image} />
         ))}

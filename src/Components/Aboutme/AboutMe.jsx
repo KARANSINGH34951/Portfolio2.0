@@ -4,7 +4,7 @@ import img from "../../assets/about.png"
 
 const AboutMe = () => {
   return (
-    <div className=" flex bg-black flex-col md:flex-row justify-center items-center min-h-screen overflow-hidden">
+    <div className=" flex bg-black flex-col md:flex-row justify-center items-center min-h-screen overflow-hidden p-8 lg:p-24 xl:p-24">
       
       <motion.div
         initial={{ opacity: 0, x: -50 }}

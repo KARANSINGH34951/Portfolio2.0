@@ -33,8 +33,8 @@ const Herosection = () => {
 
   return (
     <div className="relative flex justify-center items-center bg-gradient-to-r from-indigo-500 to-purple-600">
- <motion.div
-  className="absolute flex justify-center items-center rounded-full bg-gray-400 shadow-lg w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80"
+<motion.div
+  className="absolute flex justify-center items-center rounded-full bg-gray-400 shadow-lg w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 hidden sm:flex"
   style={{
     top: "50%",
     left: "40%",
@@ -50,6 +50,7 @@ const Herosection = () => {
     alt="Profile"
   />
 </motion.div>
+
 
 
   <div className="w-full h-screen flex flex-col sm:flex-row">
@@ -108,12 +109,12 @@ const Herosection = () => {
     </div>
 
     <div className="bg-black text-white w-full sm:w-3/5 p-6 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-between shadow-lg">
-      <div className="flex flex-col justify-center h-full ml-24 mb-5">
-        <div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+      <div className="flex flex-col justify-center h-full xl:ml-24 lg:ml-24 mb-5">
+        <div >
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-extrabold mb-4">
             About Me – The Fun Version 😎
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed">
+          <p className="text-lg text-center sm:text-xl md:text-2xl leading-relaxed">
             Hey there! I'm{" "}
             <span className="text-3xl sm:text-4xl text-yellow-400">Karan</span>
             —a developer, a dreamer, and a lover of chai ☕. Whether it's turning
