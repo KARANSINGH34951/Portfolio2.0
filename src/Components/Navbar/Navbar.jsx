@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,13 +19,25 @@ const Navbar = () => {
         </div>
 
         <ul className="hidden md:flex flex-1 justify-center space-x-8 text-sm lg:text-base">
-          <li className="hover:text-gray-300 cursor-pointer">Home</li>
-          <li className="hover:text-gray-300 cursor-pointer">About</li>
-          <li className="hover:text-gray-300 cursor-pointer">Projects</li>
-          <li className="hover:text-gray-300 cursor-pointer">Services</li>
-          <li className="hover:text-gray-300 cursor-pointer">Resume</li>
-          <li className="hover:text-gray-300 cursor-pointer">Contact</li>
-        </ul>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/about-me">About</Link>
+      </li>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/projects">Projects</Link>
+      </li>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/services">Services</Link>
+      </li>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/resume">Resume</Link>
+      </li>
+      <li className="hover:text-gray-300 cursor-pointer">
+        <Link to="/contact">Contact</Link>
+      </li>
+    </ul>
 
        
         <div className="hidden md:block">
