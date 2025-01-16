@@ -10,135 +10,101 @@ import {
 import img from "../../assets/imgkaran.jpg";
 
 const Herosection = () => {
-  const greetings = [
-    "नमस्ते 🙏 !",
-    "வணக்கம் 🙏 !",
-    "Hello 👋 !",
-    "Hola 👋 !",
-    "How's it? 🫵",
-  ];
-
-  const [currentGreeting, setCurrentGreeting] = useState("");
-  const [index, setIndex] = useState(0);
-  const [letterIndex, setLetterIndex] = useState(0);
-
-  useEffect(() => {
-    const typingSpeed = 100; 
-    const deleteSpeed = 50; 
-    const delayBeforeNextGreeting = 1000; 
-    const intervalId = setInterval(() => {
-      if (letterIndex < greetings[index].length) {
-        setCurrentGreeting((prev) => prev + greetings[index][letterIndex]);
-        setLetterIndex((prev) => prev + 1);
-      } else {
-        setTimeout(() => {
-          setCurrentGreeting(""); 
-          setLetterIndex(0); 
-          setIndex((prev) => (prev + 1) % greetings.length); 
-        }, delayBeforeNextGreeting);
-      }
-    }, letterIndex === greetings[index].length ? deleteSpeed : typingSpeed);
-
-    return () => clearInterval(intervalId); 
-  }, [index, letterIndex, greetings]);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="relative flex justify-center items-center bg-gradient-to-r from-indigo-500 to-purple-600">
-      <motion.div
-        className="absolute flex justify-center items-center rounded-full bg-gray-400 shadow-lg w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 hidden sm:flex"
-        style={{
-          top: "50%",
-          left: "40%",
-          transform: "translate(-50%, -50%)",
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img className="object-cover w-full h-full rounded-full" src={img} alt="Profile" />
-      </motion.div>
+    <div className="relative min-h-screen bg-gradient-to-b from-blue-800 via-purple-900 to-black text-white overflow-hidden">
+     
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-40"
+          animate={{
+            scale: [1, 1.5, 1],
+            x: [0, -50, 50],
+            y: [0, -50, 50],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-72 h-72 bg-blue-500 rounded-full filter blur-3xl opacity-30"
+          animate={{
+            scale: [1, 1.2, 1],
+            x: [50, 0, -50],
+            y: [-50, 50, 0],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
-      <div className="w-full h-screen flex flex-col sm:flex-row">
-        <div className="bg-green-600 w-full sm:w-2/5 p-6 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-between shadow-lg">
-          <div className="mr-14">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-yellow-400 mb-4">
-              {currentGreeting}
-            </h1>
-            <p className="text-white text-lg sm:text-xl md:text-2xl leading-relaxed">
-              When it comes to coding, I’m like a magician who makes bugs disappear! 💻🔥
-            </p>
-          </div>
+      
+      <div className="relative flex flex-col items-center justify-center h-screen px-6 md:px-20 text-center">
+        
+        <motion.div
+          className="w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden border-4 border-yellow-400 shadow-lg"
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
+          <img
+            src={img}
+            alt="Profile"
+            className="object-cover w-full h-full hover:scale-110 transition-transform duration-500"
+          />
+        </motion.div>
 
-          <div className="flex justify-start items-center gap-4 mt-8">
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-3xl sm:text-4xl hover:text-yellow-400"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yourprofile/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-3xl sm:text-4xl hover:text-yellow-400"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-3xl sm:text-4xl hover:text-yellow-400"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.instagram.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-3xl sm:text-4xl hover:text-yellow-400"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://www.facebook.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-3xl sm:text-4xl hover:text-yellow-400"
-            >
-              <FaFacebook />
-            </a>
-          </div>
+        
+        <h1 className="mt-8 text-3xl md:text-5xl lg:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-pink-500">
+          Welcome to My Universe 🌌
+        </h1>
+
+       
+        <p className="mt-4 text-lg md:text-xl lg:text-2xl max-w-2xl leading-relaxed">
+          A passionate developer turning ideas into innovative and interactive experiences. Let’s embark on this digital journey together.
+        </p>
+
+       
+        <div className="mt-8 flex gap-4">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 bg-yellow-400 text-black rounded-full font-semibold hover:bg-yellow-500 transition-all"
+          >
+            Download CV
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="px-6 py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition-all"
+          >
+            Contact Me
+          </motion.button>
         </div>
 
-        <div className="bg-black text-white w-full sm:w-3/5 p-6 sm:p-12 md:p-16 lg:p-20 flex flex-col justify-between shadow-lg">
-          <div className="flex flex-col justify-center h-full xl:ml-24 lg:ml-24 mb-5">
-            <div>
-              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl font-extrabold mb-4">
-                About Me – The Fun Version 😎
-              </h1>
-              <p className="text-lg text-center sm:text-xl md:text-2xl leading-relaxed">
-                Hey there! I'm{" "}
-                <span className="text-3xl sm:text-4xl text-yellow-400">Karan</span>
-                —a developer, a dreamer, and a lover of chai ☕. Whether it's turning
-                ideas into interactive experiences or diving into the latest tech
-                trends, I'm always up for a challenge. 🚀
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6 mt-8">
-              <button className="px-4 py-2 bg-yellow-400 rounded-xl hover:bg-yellow-500 text-lg sm:text-xl transition-all">
-                Download CV
-              </button>
-              <button className="px-4 py-2 bg-red-500 rounded-xl hover:bg-red-600 text-lg sm:text-xl transition-all">
-                Contact Me
-              </button>
-            </div>
-          </div>
+        <div className="mt-12 flex gap-6">
+          {[FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook].map((Icon, i) => (
+            <motion.a
+              key={i}
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2 }}
+              className="text-3xl hover:text-yellow-400 transition-all"
+            >
+              <Icon />
+            </motion.a>
+          ))}
         </div>
       </div>
+
+     
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-[10rem] font-extrabold text-gray-600 opacity-10">
+          DREAM BIG
+        </h1>
+      </motion.div>
     </div>
   );
 };
