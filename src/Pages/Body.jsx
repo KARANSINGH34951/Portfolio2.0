@@ -27,9 +27,7 @@ const Body = () => {
     };
   }, []);
 
-  if (isOffline) {
-    return <OfflinePage />;
-  }
+
 
   return (
     <div>
