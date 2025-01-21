@@ -14,13 +14,25 @@ function Skills() {
   ];
 
   return (
-    <div className="App bg-gray-900 p-12 flex flex-col items-center">
-      <h2 className="text-4xl text-white font-extrabold text-center mb-12 underline decoration-blue-500">
+    <div className="bg-gradient-to-r from-blue-900 via-gray-900 to-black p-12 flex flex-col items-center">
+      <h2 className="text-4xl text-white font-extrabold text-center mb-12 underline decoration-pink-500">
         Skills
       </h2>
-      <div className="skills-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
         {skills.map((skill, i) => (
-          <Card key={i} text={skill.name} index={i} image={skill.image} />
+          <div
+            key={i}
+            className="group bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-all duration-300"
+          >
+            <img
+              src={skill.image}
+              alt={skill.name}
+              className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-blue-500 group-hover:border-pink-500"
+            />
+            <h3 className="text-white text-lg font-semibold text-center group-hover:text-pink-500">
+              {skill.name}
+            </h3>
+          </div>
         ))}
       </div>
     </div>
