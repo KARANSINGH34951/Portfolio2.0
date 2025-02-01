@@ -1,5 +1,9 @@
 import React from "react";
-import Card from "./Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 function Skills() {
   const skills = [
@@ -14,26 +18,40 @@ function Skills() {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-gray-900 to-black p-12 flex flex-col items-center">
-      <h2 className="text-4xl text-white font-extrabold text-center mb-12 underline decoration-pink-500">
+    <div className="bg-gradient-to-r from-blue-900 via-gray-900 to-black p-16 flex flex-col items-center">
+      <h2 className="text-5xl text-white font-extrabold text-center mb-14 underline decoration-pink-500">
         Skills
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
-        {skills.map((skill, i) => (
-          <div
-            key={i}
-            className="group bg-gray-800 rounded-lg shadow-lg p-6 transform hover:scale-105 transition-all duration-300"
-          >
-            <img
-              src={skill.image}
-              alt={skill.name}
-              className="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-blue-500 group-hover:border-pink-500"
-            />
-            <h3 className="text-white text-lg font-semibold text-center group-hover:text-pink-500">
-              {skill.name}
-            </h3>
-          </div>
-        ))}
+      <div className="w-full max-w-5xl">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={25}
+          pagination={{ clickable: true }}
+          navigation
+          autoplay={{ delay: 1500, disableOnInteraction: false }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+          }}
+          modules={[Pagination, Navigation, Autoplay]}
+          className="mySwiper"
+        >
+          {skills.map((skill, i) => (
+            <SwiperSlide key={i}>
+              <div className="group bg-gray-800 rounded-2xl shadow-lg p-8 h-64 flex flex-col items-center justify-center transform transition-all duration-300 border-4 border-gray-700 hover:border-pink-500">
+                <img 
+                  src={skill.image}
+                  alt={skill.name}
+                  className="w-24 h-24 object-contain mb-6 rounded-full border-4 border-blue-500 group-hover:border-pink-500 hover:scale-110"
+                />
+                <h3 className="text-white text-xl font-semibold text-center group-hover:text-pink-500 transition-all">
+                  {skill.name}
+                </h3>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
